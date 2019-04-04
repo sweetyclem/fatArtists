@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Active</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Website</th>
+      <th>Location</th>
+      <th>Typeofwork</th>
+      <th>Fatcategory</th>
+      <th>Orientation</th>
+      <th>Religion</th>
+      <th>Ethnicity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.active %></td>
+        <td><%= profile.firstName %></td>
+        <td><%= profile.lastName %></td>
+        <td><%= profile.website %></td>
+        <td><%= profile.location %></td>
+        <td><%= profile.typeOfWork %></td>
+        <td><%= profile.fatCategory %></td>
+        <td><%= profile.orientation %></td>
+        <td><%= profile.religion %></td>
+        <td><%= profile.ethnicity %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>
