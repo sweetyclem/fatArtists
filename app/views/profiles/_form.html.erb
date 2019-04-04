@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :active %>
-    <%= form.text_field :active %>
-  </div>
-
-  <div class="field">
     <%= form.label :firstName %>
     <%= form.text_field :firstName %>
   </div>
@@ -60,6 +55,14 @@
     <%= form.label :ethnicity %>
     <%= form.text_field :ethnicity %>
   </div>
+  
+  
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, direct_upload: true %>
+  </div>
+  
+  <br/>
 
   <div class="actions">
     <%= form.submit %>

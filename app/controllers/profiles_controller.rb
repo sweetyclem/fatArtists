@@ -25,9 +25,10 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
 
     respond_to do |format|
-      if @profile.save
+      if @profile.save!
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
@@ -70,5 +71,10 @@ class ProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:active, :firstName, :lastName, :website, :location, :typeOfWork, :fatCategory, :orientation, :religion, :ethnicity)
+    end
+    
+    def correct_user
+      @profile = Profile.find_by(user_id: params[:user_id])
+      redirect_to(root_path) unless current_user?(@profile)
     end
 end
