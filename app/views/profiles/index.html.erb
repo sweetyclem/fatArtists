@@ -9,7 +9,7 @@
     
     <% @profiles.each do |profile| %>
       <% if profile.active %>
-      
+
       <div class="grid-item">
         <%= image_tag profile.picture, :class => "img-responsive" %>
         <a href="<%= profile.website %>" class="project-description" target="_blank">
@@ -27,5 +27,3 @@
     
   </div>
 </div>
-
-<%# <%= link_to 'New Profile', new_profile_path %>

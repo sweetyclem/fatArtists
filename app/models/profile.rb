@@ -5,7 +5,6 @@ class AttachedValidator < ActiveModel::EachValidator
 end
 
 class Profile < ApplicationRecord
-  belongs_to :user
   has_one_attached :picture
   validates :firstName, :lastName, :website, :location, presence: true
   validates :picture, attached: true
