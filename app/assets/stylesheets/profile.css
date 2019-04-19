@@ -4954,3 +4954,7 @@ main {
   float: left;
   margin-right: 5px;
 }
+
+.profile-img {
+  margin: auto;
+}
