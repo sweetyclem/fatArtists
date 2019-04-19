@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   authenticate :user do
     resources :profiles, only: [:new, :create, :edit]
   end
