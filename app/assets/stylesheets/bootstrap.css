@@ -1,27 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Cabin:400, 700|Source+Sans+Pro:400, 700");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); 
-
-.profile-info {
-  color: black;
-  font-size: 17px;
-}
-
-.hero-full-wrapper {
-  margin-top: 30px;
-}
-
-.profile-img {
-  margin: auto;
-}
-
-.navbar-nav > li {
-  margin-right: 10px;  
-}
-
-.main {
-  margin: 30px;
-}
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -300,7 +276,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #ff6360;
+  color: #ff656c;
   text-decoration: none;
 }
 a:focus,
@@ -537,7 +513,7 @@ mark {
   color: #777;
 }
 .text-primary {
-  color: #ff6360;
+  color: #ff656c;
 }
 a.text-primary:focus,
 a.text-primary:hover {
@@ -573,7 +549,7 @@ a.text-danger:hover {
 }
 .bg-primary {
   color: #fff;
-  background-color: #ff6360;
+  background-color: #ff656c;
 }
 a.bg-primary:focus,
 a.bg-primary:hover {
@@ -2490,8 +2466,8 @@ fieldset[disabled] .btn-default:hover {
 }
 .btn-primary {
   color: #fff;
-  background-color: #ff6360;
-  border-color: #ff6360;
+  background-color: #ff656c;
+  border-color: #ff656c;
 }
 .btn-primary.focus,
 .btn-primary:focus {
@@ -2534,11 +2510,11 @@ fieldset[disabled] .btn-default:hover {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-  background-color: #ff6360;
-  border-color: #ff6360;
+  background-color: #ff656c;
+  border-color: #ff656c;
 }
 .btn-primary .badge {
-  color: #ff6360;
+  color: #ff656c;
   background-color: #fff;
 }
 .btn-success {
@@ -2754,7 +2730,7 @@ fieldset[disabled] .btn-danger:hover {
   background-color: #fff;
 }
 .btn-link {
-  color: #ff6360;
+  color: #ff656c;
   font-weight: 400;
   border-radius: 0;
 }
@@ -2921,7 +2897,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #ff6360;
+  background-color: #ff656c;
 }
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:focus,
@@ -3339,7 +3315,7 @@ tbody.collapse.in {
 .nav .open > a:focus,
 .nav .open > a:hover {
   background-color: transparent;
-  border-color: #ff6360;
+  border-color: #ff656c;
 }
 .nav .nav-divider {
   height: 1px;
@@ -3388,7 +3364,7 @@ tbody.collapse.in {
 .nav-pills > li.active > a:focus,
 .nav-pills > li.active > a:hover {
   color: #fff;
-  background-color: #ff6360;
+  background-color: #ff656c;
 }
 .nav-stacked > li {
   float: none;
@@ -4040,7 +4016,7 @@ a.label:hover {
   background-color: #5e5e5e;
 }
 .label-primary {
-  background-color: #ff6360;
+  background-color: #ff656c;
 }
 .label-primary[href]:focus,
 .label-primary[href]:hover {
@@ -4102,7 +4078,7 @@ a.label:hover {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #ff6360;
+  color: #ff656c;
   background-color: #fff;
 }
 .list-group-item > .badge {
@@ -4915,7 +4891,7 @@ main {
   font-weight: 700;
 }
 .nav > li > a:hover {
-  color: #ff6360;
+  color: #ff656c;
 }
 .nav-footer-social-buttons {
   margin-bottom: 0;
