@@ -10,6 +10,14 @@
   margin-top: 30px;
 }
 
+.profile-img {
+  margin: auto;
+}
+
+.navbar-nav > li {
+  margin-right: 10px;  
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -4953,8 +4961,4 @@ main {
 .list-icons li {
   float: left;
   margin-right: 5px;
-}
-
-.profile-img {
-  margin: auto;
 }
