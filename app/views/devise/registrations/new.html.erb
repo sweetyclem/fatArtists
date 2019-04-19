@@ -23,45 +23,55 @@
 
 <%= f.fields_for :profile do |profile_form| %>
 <div class="field">
-  <%= profile_form.label :firstName %> <%= profile_form.text_field :firstName %>
+  <%= profile_form.label :firstName %><br/>
+  <%= profile_form.text_field :firstName %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :lastName %> <%= profile_form.text_field :lastName %>
+  <%= profile_form.label :lastName %><br/>
+  <%= profile_form.text_field :lastName %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :website %> <%= profile_form.text_field :website %>
+  <%= profile_form.label :website, 'Website or social media url ex: https://bla.com'  %><br/>
+  <%= profile_form.text_field :website %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :location %> <%= profile_form.text_field :location %>
+  <%= profile_form.label :location %><br/>
+  <%= profile_form.select(:location, Profile.locations.keys.to_a, :prompt => 'Select Location', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :typeOfWork %> <%= profile_form.text_field :typeOfWork %>
+  <%= profile_form.label :typeOfWork %><br/>
+  <%= profile_form.select(:typeOfWork, Profile.typeOfWorks.keys.to_a, :prompt => 'Select Type of Work', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :fatCategory %> <%= profile_form.text_field :fatCategory %>
+  <%= profile_form.label :fatCategory %><br/>
+  <%= profile_form.select(:fatCategory, Profile.fatCategories.keys.to_a, :prompt => 'Select fatCategory', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :orientation %> <%= profile_form.text_field :orientation %>
+    <%= profile_form.label :orientation %><br/>
+    <%= profile_form.select(:orientation, Profile.orientations.keys.to_a, :prompt => 'Select orientation', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :religion %> <%= profile_form.text_field :religion %>
+  <%= profile_form.label :religion %><br/>
+  <%= profile_form.select(:religion, Profile.religions.keys.to_a, :prompt => 'Select religion', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :ethnicity %> <%= profile_form.text_field :ethnicity %>
+  <%= profile_form.label :ethnicity %><br/>
+  <%= profile_form.select(:ethnicity, Profile.ethnicities.keys.to_a, :prompt => 'Select ethnicity', class: 'form-control form-control m-b') %>
 </div>
 
 <div class="field">
-  <%= profile_form.label :picture %> <%= profile_form.file_field :picture, direct_upload: true %>
+  <%= profile_form.label :picture %><br/>
+  <%= profile_form.file_field :picture, direct_upload: true %>
 </div>
-
+<br/>
 <% end %>
 
 <div class="actions">

@@ -6,12 +6,12 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :firstName
       t.string :lastName
       t.string :website
-      t.string :location
-      t.string :typeOfWork
-      t.string :fatCategory
-      t.string :orientation
-      t.string :religion
-      t.string :ethnicity
+      t.integer :location
+      t.integer :typeOfWork
+      t.integer :fatCategory
+      t.integer :orientation
+      t.integer :religion
+      t.integer :ethnicity
 
       t.timestamps
     end

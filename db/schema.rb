@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 2019_04_04_222328) do
     t.string "firstName"
     t.string "lastName"
     t.string "website"
-    t.string "location"
-    t.string "typeOfWork"
-    t.string "fatCategory"
-    t.string "orientation"
-    t.string "religion"
-    t.string "ethnicity"
+    t.integer "location"
+    t.integer "typeOfWork"
+    t.integer "fatCategory"
+    t.integer "orientation"
+    t.integer "religion"
+    t.integer "ethnicity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
