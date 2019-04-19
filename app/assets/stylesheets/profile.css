@@ -4753,7 +4753,7 @@ button.close {
   width: 1%;
 }
 .grid-item {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
 }
 .grid-item .project-description {
