@@ -1,6 +1,7 @@
 <div class="form-content">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+  <br/>
   <% resource.profile %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -46,34 +47,39 @@
     </div>
     
     <div class="field">
-      <%= profile_form.label :typeOfWork %><br/>
+        <%= profile_form.label :picture, 'Image representing your work' %><br />
+        <%= profile_form.file_field :picture, direct_upload: true %>
+      </div>
+      
+    
+    <br/>
+    <h4>Optional</h4>
+    
+    <div class="field">
+      <%= profile_form.label :typeOfWork, 'Type of Work' %><br/>
       <%= profile_form.select(:typeOfWork, Profile.typeOfWorks.keys.to_a, :prompt => 'Select Type of Work', class: 'form-control form-control m-b') %>
     </div>
     
     <div class="field">
-      <%= profile_form.label :fatCategory %><br/>
-      <%= profile_form.select(:fatCategory, Profile.fatCategories.keys.to_a, :prompt => 'Select fatCategory', class: 'form-control form-control m-b') %>
+      <%= profile_form.label :fatCategory, 'Fat Category' %><br/>
+      <%= profile_form.select(:fatCategory, Profile.fatCategories.keys.to_a, :prompt => 'Select Fat Category', class: 'form-control form-control m-b') %>
     </div>
     
     <div class="field">
-        <%= profile_form.label :orientation %><br/>
-        <%= profile_form.select(:orientation, Profile.orientations.keys.to_a, :prompt => 'Select orientation', class: 'form-control form-control m-b') %>
+        <%= profile_form.label :orientation, 'Orientation' %><br/>
+        <%= profile_form.select(:orientation, Profile.orientations.keys.to_a, :prompt => 'Select Orientation', class: 'form-control form-control m-b') %>
     </div>
     
     <div class="field">
-      <%= profile_form.label :religion %><br/>
-      <%= profile_form.select(:religion, Profile.religions.keys.to_a, :prompt => 'Select religion', class: 'form-control form-control m-b') %>
+      <%= profile_form.label :religion, 'Religion' %><br/>
+      <%= profile_form.select(:religion, Profile.religions.keys.to_a, :prompt => 'Select Religion', class: 'form-control form-control m-b') %>
     </div>
     
     <div class="field">
       <%= profile_form.label :ethnicity %><br/>
-      <%= profile_form.select(:ethnicity, Profile.ethnicities.keys.to_a, :prompt => 'Select ethnicity', class: 'form-control form-control m-b') %>
+      <%= profile_form.select(:ethnicity, Profile.ethnicities.keys.to_a, :prompt => 'Select Ethnicity', class: 'form-control form-control m-b') %>
     </div>
 
-    <div class="field">
-      <%= profile_form.label :picture %><br />
-      <%= profile_form.file_field :picture, direct_upload: true %>
-    </div>
     <br />
   <% end %>
 
