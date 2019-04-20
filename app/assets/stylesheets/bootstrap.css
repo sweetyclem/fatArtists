@@ -4777,7 +4777,7 @@ button.close {
   margin: 0;
   padding: 0;
 }
-.grid-item:hover .project-description {
+.grid-item:not(.inactive):hover .project-description {
   opacity: 1;
 }
 .section-container-spacer {
