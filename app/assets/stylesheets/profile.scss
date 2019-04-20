@@ -22,8 +22,10 @@
   margin: 30px;
 }
 
-.form-content {
-  margin: 50px;
+@media screen and (min-width: 992px) {
+  .form-content {
+    margin: 50px 250px;
+  }
 }
 
 label {
