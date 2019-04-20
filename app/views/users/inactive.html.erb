@@ -12,15 +12,15 @@
           <div class="">
             <h3><%= user.profile.firstName + ' ' + user.profile.lastName %></h3>
             <p>
-              <a href="<%= user.profile.website %>" class="project-description" target="_blank">Website</a>
+              <a href="<%= user.profile.website %>" target="_blank">Website</a>
             </p>  
               <p class="profile-info"><%= user.email %></p>
-              <p class="profile-info"><%= user.profile.location %></p>
-              <p class="profile-info"><%= user.profile.typeOfWork %></p>
-              <p class="profile-info"><%= user.profile.fatCategory %></p>
-              <p class="profile-info"><%= user.profile.orientation %></p>
-              <p class="profile-info"><%= user.profile.religion %></p>
-              <p class="profile-info"><%= user.profile.ethnicity %></p>
+              <p class="profile-info"><%= user.profile.location.humanize if user.profile.location %></p>
+              <p class="profile-info"><%= user.profile.typeOfWork.humanize if user.profile.typeOfWork %></p>
+              <p class="profile-info"><%= user.profile.fatCategory.humanize if user.profile.fatCategory %></p>
+              <p class="profile-info"><%= user.profile.orientation.humanize if user.profile.orientation %></p>
+              <p class="profile-info"><%= user.profile.religion.humanize if user.profile.religion %></p>
+              <p class="profile-info"><%= user.profile.ethnicity.humanize if user.profile.ethnicity %></p>
               <p>
                 <%= link_to "Activate user", activate_user_path(user) %>
               </p>

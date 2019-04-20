@@ -12,12 +12,13 @@
           <div class="project-text-holder">
             <div class="project-text-inner">
               <h3><%= profile.firstName + ' ' + profile.lastName %></h3>
-              <p class="profile-info"><%= profile.location %></p>
-              <p class="profile-info"><%= profile.typeOfWork %></p>
-              <p class="profile-info"><%= profile.fatCategory %></p>
-              <p class="profile-info"><%= profile.orientation %></p>
-              <p class="profile-info"><%= profile.religion %></p>
-              <p class="profile-info"><%= profile.ethnicity %></p>            </div>
+              <p class="profile-info"><%= profile.location.humanize if profile.location %></p>
+              <p class="profile-info"><%= profile.typeOfWork.humanize if profile.typeOfWork %></p>
+              <p class="profile-info"><%= profile.fatCategory.humanize if profile.fatCategory %></p>
+              <p class="profile-info"><%= profile.orientation.humanize if profile.orientation %></p>
+              <p class="profile-info"><%= profile.religion.humanize if profile.religion %></p>
+              <p class="profile-info"><%= profile.ethnicity.humanize if profile.ethnicity %></p>
+            </div>
           </div>
         </a>
       </div>
