@@ -4740,11 +4740,7 @@ button.close {
 .gutter-sizer {
   width: 1%;
 }
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+
 .grid-item .project-description {
   opacity: 0;
   -webkit-transition: all 0.3s linear;
