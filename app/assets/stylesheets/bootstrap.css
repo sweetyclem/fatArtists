@@ -4715,7 +4715,6 @@ button.close {
 }
 .grid-item,
 .grid-sizer {
-  position: relative;
   width: 100%;
   margin-bottom: 1%;
 }
@@ -4742,8 +4741,9 @@ button.close {
   width: 1%;
 }
 .grid-item {
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
+  position: relative;
 }
 .grid-item .project-description {
   opacity: 0;
