@@ -1,11 +1,23 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :filter]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
   def index
     @profiles = Profile.all
+  end
+  
+  # POST /profiles/filter
+  def filter
+    @profiles = Profile.all
+    @profiles = @profiles.where(location: params[:location]) if params[:location].present?
+    @profiles = @profiles.where(typeOfWork: params[:typeOfWork]) if params[:typeOfWork].present?
+    @profiles = @profiles.where(fatCategory: params[:fatCategory]) if params[:fatCategory].present?
+    @profiles = @profiles.where(orientation: params[:orientation]) if params[:orientation].present?
+    @profiles = @profiles.where(religion: params[:religion]) if params[:religion].present?
+    @profiles = @profiles.where(ethnicity: params[:ethnicity]) if params[:ethnicity].present?
+    render "index"
   end
 
   # GET /profiles/1

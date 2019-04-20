@@ -1,8 +1,31 @@
+<h4>Filter profiles</h4>
+<%= form_tag(filter_profiles_path) do %>
+  <div class="field">
+    <%= select_tag 'location', options_for_select(Profile.locations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Location" %>
+  </div>
+  <div class="field">
+    <%= select_tag 'typeOfWork', options_for_select(Profile.typeOfWorks.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Type of Work" %>
+  </div>
+  <div class="field">
+    <%= select_tag 'fatCategory', options_for_select(Profile.fatCategories.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
+  </div>
+  <div class="field">
+    <%= select_tag 'orientation', options_for_select(Profile.orientations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
+  </div>
+  <div class="field">
+    <%= select_tag 'religion', options_for_select(Profile.religions.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Religion" %>
+  </div>
+  <div class="field">
+    <%= select_tag 'ethnicity', options_for_select(Profile.ethnicities.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Ethnicity" %>
+  </div>
+  <%= submit_tag 'Filter' %>
+<% end %>
+
 <div class="hero-full-wrapper">
   <div class="grid">
   <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
-        
+    
     <% @profiles.each do |profile| %>
       <% if profile.active %>
 

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'inactive', to: 'users#inactive', as: :inactive_users
     get 'destroy/:id', to: 'users#destroy', as: :destroy_user
   end
+  post 'filter', to: 'profiles#filter', as: :filter_profiles
   root to: "profiles#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
