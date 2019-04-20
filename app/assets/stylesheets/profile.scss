@@ -71,3 +71,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="fil
 .bold {
   font-weight: bold;
 }
+
+a {
+  &:hover {
+    color: #c44248;
+    text-decoration: none;
+  }
+}
