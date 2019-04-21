@@ -108,7 +108,6 @@ a {
   
   @media screen and (min-width: 992px) {
     select {
-      width: 50%;
       height: 50px;
       box-sizing: border-box;
       border-radius: 5px;
@@ -117,6 +116,14 @@ a {
       font-size: 15px;
       padding: 10px;
       outline: none;
+    }
+
+    .box {
+      width: 50%;
+    }
+
+    #filter-form-content {
+      width: 50%;
     }
   }
 }
