@@ -9,7 +9,7 @@
     <%= select_tag 'location', options_for_select(Profile.locations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Location" %>
     <%= select_tag 'typeOfWork', options_for_select(Profile.typeOfWorks.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Type of Work" %>
     <%= select_tag 'fatCategory', options_for_select(Profile.fatCategories.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
-    <%= select_tag 'orientation', options_for_select(Profile.orientations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
+    <%= select_tag 'orientation', options_for_select(Profile.orientations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Orientation" %>
     <%= select_tag 'religion', options_for_select(Profile.religions.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Religion" %>
     <%= select_tag 'ethnicity', options_for_select(Profile.ethnicities.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Ethnicity" %>
     <div class="actions">
