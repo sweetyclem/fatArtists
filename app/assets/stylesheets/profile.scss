@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin:400, 700|Source+Sans+Pro:400, 700");
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"); 
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css"); 
 
 .profile-info {
   color: black;
@@ -42,6 +42,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="fil
   font-size: 15px;
   padding: 10px;
   outline: none;
+  background-color: white;
 }
 
 .actions {
@@ -78,5 +79,44 @@ a {
   &:hover {
     color: #c44248;
     text-decoration: none;
+  }
+}
+
+
+#filter-form-content {
+  display: none; 
+  padding: 10px 10px;
+  border: solid 0.5px #b2b4b7;
+}
+
+.filter-form {
+  .box {
+    border: solid 0.5px #b2b4b7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    h4 {
+      padding-left: 10px;
+      flex-grow: 1;
+    }
+    i {
+      font-size: 25px;
+      vertical-align: middle;
+      margin: auto 15px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    select {
+      width: 50%;
+      height: 50px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      font-size: 15px;
+      padding: 10px;
+      outline: none;
+    }
   }
 }

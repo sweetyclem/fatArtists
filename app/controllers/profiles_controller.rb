@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @showFilter = false
   end
   
   # POST /profiles/filter
@@ -17,6 +18,7 @@ class ProfilesController < ApplicationController
     @profiles = @profiles.where(orientation: params[:orientation]) if params[:orientation].present?
     @profiles = @profiles.where(religion: params[:religion]) if params[:religion].present?
     @profiles = @profiles.where(ethnicity: params[:ethnicity]) if params[:ethnicity].present?
+    @showFilter = false
     render "index"
   end
 

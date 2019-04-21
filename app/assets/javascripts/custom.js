@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
   navActivePage();
 });
 
+function toggleFilters() {
+    if (document.getElementById) {
+        var element = document.getElementById('filter-form-content');
+        var style = window.getComputedStyle(element);
+        if (style.getPropertyValue('display') == 'none') {
+            element.style.display = 'flex';
+        } else if (style.getPropertyValue('display')) {
+            element.style.display = 'none';
+        }
+    }
+}
+
 ! function(t) {
   function e(i) {
       if (n[i]) return n[i].exports;

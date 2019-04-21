@@ -1,30 +1,32 @@
-<h4>Filter profiles</h4>
-<%= form_tag(filter_profiles_path) do %>
-  <div class="field">
+<div class="filter-form">
+  <div class="box" onClick="toggleFilters()">
+    <h4>Filter profiles</h4>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+  
+  <div id="filter-form-content">
+    <%= form_tag(filter_profiles_path) do %>
     <%= select_tag 'location', options_for_select(Profile.locations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Location" %>
-  </div>
-  <div class="field">
     <%= select_tag 'typeOfWork', options_for_select(Profile.typeOfWorks.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Type of Work" %>
-  </div>
-  <div class="field">
     <%= select_tag 'fatCategory', options_for_select(Profile.fatCategories.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
-  </div>
-  <div class="field">
     <%= select_tag 'orientation', options_for_select(Profile.orientations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>
-  </div>
-  <div class="field">
     <%= select_tag 'religion', options_for_select(Profile.religions.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Religion" %>
-  </div>
-  <div class="field">
     <%= select_tag 'ethnicity', options_for_select(Profile.ethnicities.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Ethnicity" %>
+    <div class="actions">
+      <%= submit_tag 'Filter' %>
+    </div>
+    <% end %>
   </div>
-  <%= submit_tag 'Filter' %>
-<% end %>
+</div>
 
 <div class="hero-full-wrapper">
   <div class="grid">
   <div class="gutter-sizer"></div>
     <div class="grid-sizer"></div>
+    
+    <% if @profiles.size == 0 %>
+      <h3>No result</h3>
+    <% end %>
     
     <% @profiles.each do |profile| %>
       <% if profile.active %>
