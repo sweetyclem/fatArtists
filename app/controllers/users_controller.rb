@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       @users = User.includes(:profile).where(profiles: { active: true })
       if !params.empty?
         if params[:search_term].present?
-          @users = (@users.joins(:profile).where("firstName LIKE ?", "%#{params[:search_term]}%")).or(@users.joins(:profile).where("lastName LIKE ?", "%#{params[:search_term]}%")).or(@users.joins(:profile).where("website LIKE ?", "%#{params[:search_term]}%"))
+          @users = @users.joins(:profile).where("'firstName' LIKE ?", "%#{params[:search_term]}%").or(@users.joins(:profile).where("'lastName' LIKE ?", "%#{params[:search_term]}%")).or(@users.joins(:profile).where("website LIKE ?", "%#{params[:search_term]}%"))
         end
         @users = @users.joins(:profile).where(profiles: { location: params[:location] }) if params[:location].present?
         @users = @users.joins(:profile).where(profiles: { typeOfWork: params[:typeOfWork] }) if params[:typeOfWork].present?
