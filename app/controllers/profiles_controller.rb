@@ -5,13 +5,14 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.where(active: true)
+    @profiles = @profiles.paginate page: params[:page], per_page: 2
     @showFilter = false
   end
   
   # POST /profiles/filter
   def filter
-    @profiles = Profile.all
+    @profiles = Profile.where(active: true)
     @profiles = @profiles.where(location: params[:location]) if params[:location].present?
     @profiles = @profiles.where(typeOfWork: params[:typeOfWork]) if params[:typeOfWork].present?
     @profiles = @profiles.where(fatCategory: params[:fatCategory]) if params[:fatCategory].present?
