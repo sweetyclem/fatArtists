@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def inactive
     if current_user.admin
       @users = User.includes(:profile).where(profiles: { active: false }).where.not(email: "pirlot.clementine@gmail.com")
+      @users = @users.paginate page: params[:page], per_page: 20
     end
   end
 
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
   def active
     if current_user.admin
       @users = User.includes(:profile).where(profiles: { active: true })
+      @users = @users.paginate page: params[:page], per_page: 20
     end
   end
 
@@ -50,6 +52,7 @@ class UsersController < ApplicationController
         @users = @users.joins(:profile).where(profiles: { orientation: params[:orientation] }) if params[:orientation].present?
         @users = @users.joins(:profile).where(profiles: { religion: params[:religion] }) if params[:religion].present?
         @users = @users.joins(:profile).where(profiles: { ethnicity: params[:ethnicity] }) if params[:ethnicity].present?
+        @users = @users.paginate page: params[:page], per_page: 20
         @showFilter = false
         render "active"
       end

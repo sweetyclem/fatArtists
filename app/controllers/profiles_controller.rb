@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.where(active: true)
-    @profiles = @profiles.paginate page: params[:page], per_page: 2
+    @profiles = @profiles.paginate page: params[:page], per_page: 20
     @showFilter = false
   end
   
@@ -19,6 +19,7 @@ class ProfilesController < ApplicationController
     @profiles = @profiles.where(orientation: params[:orientation]) if params[:orientation].present?
     @profiles = @profiles.where(religion: params[:religion]) if params[:religion].present?
     @profiles = @profiles.where(ethnicity: params[:ethnicity]) if params[:ethnicity].present?
+    @profiles = @profiles.paginate page: params[:page], per_page: 20
     @showFilter = false
     render "index"
   end
