@@ -4904,9 +4904,9 @@ main {
   margin-bottom: 0;
 }
 .navbar-toggle {
-  margin-left: 15px;
+  margin-left: 5px;
+  margin-right: 10px;
   float: left;
-  margin-right: 0;
 }
 .template-example {
   margin-bottom: 30px;
