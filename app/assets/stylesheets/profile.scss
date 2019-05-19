@@ -261,7 +261,13 @@ a {
 }
 
 .navbar-header h3 {
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 0 0;
+}
+
+.navbar {
+  .container-fluid {
+    margin-left: 10px;
+  }
 }
 
 
@@ -270,6 +276,6 @@ a {
     margin: 50px 250px;
   }
   .navbar-header h3 {
-    margin: 10px 10px 10px 15px;
+    margin: 10px 10px 0 15px;
   }
 }
