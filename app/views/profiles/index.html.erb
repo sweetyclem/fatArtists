@@ -5,7 +5,7 @@
   </div>
   
   <div id="filter-form-content">
-    <%= form_tag(filter_profiles_path) do %>
+    <%= form_tag(root_path) do %>
     <%= select_tag 'location', options_for_select(Profile.locations.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Location" %>
     <%= select_tag 'typeOfWork', options_for_select(Profile.typeOfWorks.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Type of Work" %>
     <%= select_tag 'fatCategory', options_for_select(Profile.fatCategories.keys.to_a.collect{ |k| [k.humanize, k] }), include_blank: "Select Fat Category" %>

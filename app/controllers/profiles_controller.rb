@@ -6,22 +6,16 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.where(active: true)
+    if !params.empty?
+      @profiles = @profiles.where(location: params[:location]) if params[:location].present?
+      @profiles = @profiles.where(typeOfWork: params[:typeOfWork]) if params[:typeOfWork].present?
+      @profiles = @profiles.where(fatCategory: params[:fatCategory]) if params[:fatCategory].present?
+      @profiles = @profiles.where(orientation: params[:orientation]) if params[:orientation].present?
+      @profiles = @profiles.where(religion: params[:religion]) if params[:religion].present?
+      @profiles = @profiles.where(ethnicity: params[:ethnicity]) if params[:ethnicity].present?
+    end
     @profiles = @profiles.paginate page: params[:page], per_page: 20
     @showFilter = false
-  end
-  
-  # POST /profiles/filter
-  def filter
-    @profiles = Profile.where(active: true)
-    @profiles = @profiles.where(location: params[:location]) if params[:location].present?
-    @profiles = @profiles.where(typeOfWork: params[:typeOfWork]) if params[:typeOfWork].present?
-    @profiles = @profiles.where(fatCategory: params[:fatCategory]) if params[:fatCategory].present?
-    @profiles = @profiles.where(orientation: params[:orientation]) if params[:orientation].present?
-    @profiles = @profiles.where(religion: params[:religion]) if params[:religion].present?
-    @profiles = @profiles.where(ethnicity: params[:ethnicity]) if params[:ethnicity].present?
-    @profiles = @profiles.paginate page: params[:page], per_page: 20
-    @showFilter = false
-    render "index"
   end
 
   # GET /profiles/1
