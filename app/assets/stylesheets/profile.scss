@@ -15,7 +15,8 @@
 }
 
 .navbar-nav > li {
-  margin-right: 10px;  
+  margin-right: 10px;
+  padding: 0 5px;
 }
 
 .main {
@@ -125,5 +126,18 @@ a {
     #filter-form-content {
       width: 50%;
     }
+  }
+}
+
+.grid-item {
+  &.active {
+    border: solid 1px grey;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  &.inactive {
+    border: solid 1px grey;
+    padding: 10px;
+    border-radius: 5px;
   }
 }
