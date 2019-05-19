@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/inactive
   def inactive
     if current_user.admin
-      @users = User.includes(:profile).where(profiles: { active: false })
+      @users = User.includes(:profile).where(profiles: { active: false }).where.not(email: "pirlot.clementine@gmail.com")
     end
   end
 
