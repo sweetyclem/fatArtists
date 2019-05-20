@@ -270,6 +270,10 @@ a {
   }
 }
 
+.awaiting-activation {
+  margin: 10px;
+}
+
 
 @media screen and (min-width: 992px) {
   .form-content {
@@ -277,5 +281,9 @@ a {
   }
   .navbar-header h3 {
     margin: 10px 10px 0 15px;
+  }
+  .awaiting-activation {
+    width: 50%;
+    margin: 20px auto;
   }
 }

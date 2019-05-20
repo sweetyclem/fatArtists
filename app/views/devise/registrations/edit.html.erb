@@ -1,6 +1,13 @@
 <div class="form-content">
+  
+  <% if user_signed_in? && !current_user.profile.active %>
+  <div class="awaiting-activation">
+    <p class="alert alert-info">Your profile is under review and will be activated soon</p>
+  </div>
+  <% end %>
+  
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+  
   <br/>
   <% resource.profile %>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

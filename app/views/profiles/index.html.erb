@@ -19,6 +19,12 @@
   </div>
 </div>
 
+<% if user_signed_in? && !current_user.profile.active %>
+<div class="awaiting-activation">
+  <p class="alert alert-info">Your profile is under review and will be activated soon</p>
+</div>
+<% end %>
+
 <div class="hero-full-wrapper">
   <div class="grid">
   <div class="gutter-sizer"></div>
