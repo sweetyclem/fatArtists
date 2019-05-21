@@ -8,6 +8,7 @@ class Profile < ApplicationRecord
   has_one_attached :picture
   validates :firstName, :lastName, :website, :location, presence: true
   validates :picture, attached: true
+  validates_format_of :website, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :message => 'is invalid, please use format: http://bla.com'
   enum location: [:US_East_Coast, :US_West_Coast, :US_Midwest, :US_South, :Asia, :Africa, :Australia_New_Zealand, :Europe, :Canada, :Carribean, :Central_America, :Mexico, :Middle_East, :South_America]
   enum orientation: [:LBTQ]
   enum religion: [:Agnostic, :Atheist, :Buddhist, :Christian, :Hindu, :Jewish, :Muslim, :Pagan, :Sikh, :Taoist]
